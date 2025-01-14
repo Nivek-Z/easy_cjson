@@ -1,6 +1,7 @@
 # easy_cjson
 
 这是一个简易的C语言json解析器
+注:请使用gcc编译器编译，其它可能会出错 
 
 
 主要函数在ecjson.c中，helper_functions.c中只有清除空白字符和读取文件内容的函数
