@@ -1,0 +1,14 @@
+[
+{
+    "name": "张三",
+    "age": null,
+    "scores": [{"chinese":98},{"match":99}]
+    
+},
+{
+    "name": "张三",
+    "age": 28.5,
+    "scores": [{"chinese":98},{"match":99}]
+    
+}
+]
