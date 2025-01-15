@@ -22,6 +22,8 @@
     int result = json_parse(json_text, &parsed);  //调用json_parse函数将解析的结果存到json_value结构体中
     
     接下来就可以用C语言操作里面的数据，操作完后可以用print_json_value将操作完后的数据重新变成json格式
+
+    记得用free_json_value 和free释放内存，详见主函数(测试函数)
     */
 
 
@@ -480,7 +482,7 @@ int parse_array(const char **json, json_value **out_array, size_t *out_size)
 }
 
 // 释放 JSON 值
-void free_json_value(json_value *val) 
+void free_json_value(json_value *val)  //由于释放结构体并不能释放结构体中存储的指针占据的空间
 {
     if (!val) return;
 
@@ -515,6 +517,7 @@ void free_json_value(json_value *val)
             break;
     }
     //free(val);         注意val没被释放，但是释放会报错，可能会导致内存泄漏，暂时没有解决，
+                         //已解决（原因：递归的时候重复释放了val)，free(val)这一步直接加在主函数中就行了
 }
 
 

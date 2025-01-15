@@ -20,7 +20,8 @@ int main()
     {
         printf("JSON parsed successfully!\n");
         print_json_value(parsed, 0);
-        free_json_value(parsed);
+        free_json_value(parsed); //释放结构体中的存储的指针
+        free(parsed); //最后把结构体释放
     }
     else 
     {
