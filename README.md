@@ -19,4 +19,6 @@
     int result = json_parse(json_text, &parsed);  //调用json_parse函数将解析的结果存到json_value结构体中
     
     接下来就可以用C语言操作里面的数据，操作完后可以用print_json_value将操作完后的数据重新变成json格式
+
+    如果要长期运行此程序记得释放内存
 */
